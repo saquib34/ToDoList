@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 function page() {
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
-  const [mainTasks, setmainTasks] = useState([]); 
-  const submitHandler = (e) => {  
+  const [mainTasks, setmainTasks] = useState<{ title: string; desc: string; }[]>([]); 
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {  
     e.preventDefault()
     setmainTasks([...mainTasks, {title,desc}]);
     setdesc("")
